@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />	
+	<meta name="description" content="Web development" />
+	<meta name="keywords"    content="Registration Form" />
+	<meta name="author"      content="Hieu Bui" />
+	
+	
+	<link rel="stylesheet" href="regform_desktop.css" />
+	<link rel="stylesheet" href="tooltip.css" />
+	<script src="tooltip.js" defer></script>
+	
+	<title>Web Development Registration Form</title>
+</head>
+<body>
+	<form method="post" action="http://mercury.swin.edu.au/it000000/cos10005/formtest2.php">
+		<!-- Account Info -->
+		<fieldset>
+			<legend>Account Information</legend>
+			<div class="form-row">
+				<label for="sid">User ID</label>
+				<input type="text" name="sid" id="sid" />
+				<span class="tooltip" id="sidTip">Student ID</span>
+			</div>
+			
+		<div class="form-row">
+			<label for="pwd1">Password</label>
+			<input type="password" name="pwd1" id="pwd1" />
+		</div>
+		
+		<div class="form-row">
+			<label for="pwd2">Retype Password</label>
+			<input type="password" name="pwd2" id="pwd2" />
+		</div>
+	
+	</fieldset>
+
+
+		<!-- User Info -->
+		<fieldset>
+			<legend>User Information</legend>
+
+			<p class="textinput">
+				<label for="username">Name</label>
+				<input type="text" name="username" id="username" />
+			</p>
+		</fieldset>
+
+		<!-- Gender -->
+		<fieldset class="radioinput">
+			<legend>Gender</legend>
+			<label for="genderM">Male</label>
+			<input type="radio" name="gender" value="M" id="genderM" />
+			<label for="genderF">Female</label>
+			<input type="radio" name="gender" value="F" id="genderF"/>
+		</fieldset>
+
+		<!-- Submit Button -->
+		<p class="buttoninput">
+			<input type="submit" value="T Register" />
+		</p>
+	</form>
+</body>
+</html>

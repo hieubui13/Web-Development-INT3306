@@ -1,0 +1,87 @@
+/* 1. Basic Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #c8e6ff;
+  color: #333;
+  padding: 20px;
+}
+
+/* 2. Header */
+header {
+  background-color: #fcfcfc;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* 3. Navigation */
+nav ol {
+  list-style: none;
+  background-color: #382e74;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+nav ol li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* 4. Layout */
+.main-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.main-content section {
+  flex: 2;
+  gap: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.main-content aside {
+  flex: 1;
+  background-color: #e8f5e9;
+  padding: 20px;
+  border-radius: 8px;
+  font-style: italic;
+  color: rgb(0, 77, 0);
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+
+/* 5. Footer */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #808080;
+  flex-direction: column;
+}
+
+/* 6. Responsive Layout */
+@media screen and (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  nav ol {
+    flex-direction: column;
+    align-items: center;
+  }
+}

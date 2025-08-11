@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="Web development" />
+<meta name="keywords" content="Registration Form" />
+<meta name="author" content="put your name here" />
+
+
+<link href="regform2_desktop.css" rel="stylesheet" type="text/css" />
+<link href="modal.css" rel="stylesheet" type="text/css" />
+<script src="jquery-1.9.1.min.js"></script>
+<script src="validation.js"></script>
+
+<title>Web Development Registration Form</title>
+</head>
+<body>
+<form id="regform" method="post" action="http://................./formtest.php">
+
+<!-- (5) add the [-]/[+] collapse/expand content -->
+<span class="toggle" data-target="#accountInfo" style="color:red;cursor:pointer;">[-]</span> Section A
+<div id="accountInfo">
+    <fieldset>
+        <legend>Account Information</legend>
+        <div class="textinput">
+            <label for="sid">User ID</label>
+            <input id="sid" type="text" name="sid" />
+        </div>
+        <div class="textinput">
+            <label for="pwd1">Password</label>
+            <input id="pwd1" type="password" name="pwd1" />
+        </div>
+        <div class="textinput">
+            <label for="pwd2">Retype Password</label>
+            <input id="pwd2" type="password" name="pwd2" />
+        </div>
+    </fieldset>
+</div>
+
+<!-- (6) add the [-]/[+] collapse/expand content -->
+<span class="toggle" data-target="#userInfo" style="color:red;cursor:pointer;">[-]</span> Section B
+<div id="userInfo">
+    <fieldset>
+        <legend>User Information</legend>
+        <div class="textinput">
+            <label for="uname">Name</label>
+            <input id="uname" type="text" name="uname" />
+        </div>
+        <div class="radioinput">
+            <fieldset>
+                <legend>Gender</legend>
+                <input id="genm" type="radio" name="gender" value="M" />
+                <label for="genm">Male</label>
+                <input id="genf" type="radio" name="gender" value="F" />
+                <label for="genf">Female</label>
+            </fieldset>
+        </div>
+    </fieldset>
+</div>
+
+<div class="buttoninput">
+    <input type="submit" value="Test Registration Form" />
+</div>
+</form>
+
+<script>
+$(document).ready(function(){
+    $(".toggle").click(function(){
+        var target = $($(this).data("target"));
+        if(target.is(":visible")){
+            target.slideUp();
+            $(this).text("[+]");
+        } else {
+            target.slideDown();
+            $(this).text("[-]");
+        }
+    });
+});
+</script>
+
+</body>
+</html>

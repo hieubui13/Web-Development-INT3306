@@ -1,0 +1,81 @@
+/* Style the form to a fixed width so the form looks the same
+   even if the browser window is resized */
+form {
+  width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #8d8d8d;
+  background-color: #ddf1ff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+
+label {
+  float: left;
+  text-align: right;
+  width: 160px; 
+  margin-right: 16px;
+  display: block;
+  line-height: 32px;
+}
+
+input {
+  width: 50%;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-row label {
+  width: 150px;
+  text-align: right;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.form-row input[type="text"],
+.form-row input[type="password"] {
+  flex: 1;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.radioinput fieldset {
+  border: none;
+}
+
+.radioinput legend {
+  float: left;
+  text-align: right;
+  width: 144px; 
+  margin-right: 16px;
+  line-height: 32px;
+}
+
+.radioinput input {
+  width: auto;
+}
+
+.radioinput label {
+  float: none;
+  text-align: left;
+  margin-right: 20px;
+}
+
+/* Style button input */
+.buttoninput {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.buttoninput input {
+  width: auto;
+  padding: 6px 12px;
+  font-weight: bold;
+}

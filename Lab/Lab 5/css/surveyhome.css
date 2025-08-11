@@ -1,0 +1,90 @@
+
+main {
+    float: left;
+    width: 65%;
+}
+
+aside {
+    float: right;
+    width: 30%;
+    font-size: 8px;
+    font-style: italic;
+    color: green;
+}
+
+footer {
+    clear: both;
+}
+
+
+#logo {
+    color: white;
+    background-color: navy;
+}
+
+
+nav {
+    background-color: #333;
+}
+
+article {
+    color: black;
+    background-color: #eee;
+}
+
+
+#ads {
+    color: black;
+    background-color: #eee;
+}
+
+
+.ad {
+    color: black;
+    background-color: red;
+}
+
+
+#copyright {
+    color: white;
+    background-color: gray;
+}
+
+nav ul {
+    float: left;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+nav a {
+    float: left;
+    width: 6em;
+    text-decoration: none;
+    color: white;
+    background-color: blue;
+    padding: 0.2em 0.6em;
+    border-right: 1px solid white;
+}
+
+nav a:hover {
+    background-color: brown;
+}
+
+
+article {
+    width: 400px;
+    height: 200px;
+    box-shadow: 3px 3px 3px 2px #797979;
+}
+
+
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+    text-shadow: #aaa 2px 2px 2px;
+}

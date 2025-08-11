@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Test Drive Booking</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary1: #0f172a; /* Navy */
+    --primary2: #1e3a8a; /* Deep Blue */
+    --accent: #38bdf8;   /* Light Blue */
+    --success: #22c55e;
+    --danger: #ef4444;
+    --gray-100: #f3f4f6;
+    --gray-300: #d1d5db;
+    --gray-600: #4b5563;
+    --gray-800: #1f2937;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--gray-100);
+    margin: 0;
+    color: var(--gray-800);
+  }
+  header {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(90deg, var(--primary1), var(--primary2));
+    color: white;
+  }
+  header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  form {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    animation: fadeInUp 0.6s ease;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    font-size: 0.9rem;
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-300);
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(56,189,248,0.2);
+  }
+  input[type="checkbox"] { width: auto; margin-right: 8px; }
+  button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: transform 0.15s ease;
+  }
+  button:hover { transform: translateY(-1px); }
+  .btn-primary {
+    background: linear-gradient(90deg, var(--accent), var(--primary2));
+    color: white;
+  }
+  .btn-secondary {
+    background: var(--gray-300);
+    color: var(--gray-800);
+  }
+  aside {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    animation: fadeInUp 0.8s ease;
+  }
+  aside h3 {
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  aside p {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    margin-bottom: 12px;
+  }
+  aside img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease;
+  }
+  th, td {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+  th {
+    background: var(--primary2);
+    color: white;
+  }
+  tr:nth-child(even) { background: var(--gray-100); }
+  .btn-danger {
+    background: var(--danger);
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+  }
+  .popup {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 300px;
+    animation: fadeInUp 0.4s ease;
+  }
+  .popup-content h4 {
+    margin-bottom: 10px;
+    color: var(--success);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Book Your Test Drive</h1>
+  <p>Select your favorite model, schedule a time, and experience it now!</p>
+</header>
+
+<div class="container">
+  <form id="bookingForm">
+    <label>Full Name</label>
+    <input type="text" name="fullName" placeholder="John Doe" required />
+    <label>Email</label>
+    <input type="email" name="email" placeholder="email@example.com" required />
+    <label>Phone Number</label>
+    <input type="text" name="phone" placeholder="0123456789" required />
+    <label>Vehicle Type</label>
+    <select name="vehicleType">
+      <option value="car">Car</option>
+      <option value="motorcycle">Motorcycle</option>
+    </select>
+    <label>Model</label>
+    <select name="model" required>
+      <option value="">-- Select Model --</option>
+      <option value="Toyota Camry">Toyota Camry</option>
+      <option value="Honda Civic">Honda Civic</option>
+      <option value="Ford Ranger">Ford Ranger</option>
+      <option value="Mazda MX-5">Mazda MX-5</option>
+    </select>
+    <label>Location</label>
+    <select name="location" required>
+      <option value="">-- Select Location --</option>
+      <option value="204A Âu Cơ, Quảng An Ward, Tây Hồ District, Hanoi City">
+        204A Âu Cơ, Quảng An Ward, Tây Hồ District, Hanoi City
+      </option>
+      <option value="48 Hào Nam, Chợ Dừa, Đống Đa, Hanoi, Vietnam">
+        48 Hào Nam, Chợ Dừa, Đống Đa, Hanoi, Vietnam
+      </option>
+    </select>
+    <label>Date</label>
+    <input type="date" name="date" required />
+    <label>Time</label>
+    <input type="time" name="time" required />
+    <label>Duration (minutes)</label>
+    <input type="number" name="durationMins" value="30" min="10" max="240" />
+    <label>Additional Notes</label>
+    <textarea name="notes" placeholder="Any special requests..."></textarea>
+    <div style="margin-bottom: 15px;">
+      <input type="checkbox" name="agree" id="agree" />
+      <label for="agree" style="display: inline; font-weight: normal;">I agree to the test drive terms.</label>
+    </div>
+    <button type="submit" class="btn-primary">Book Now</button>
+    <button type="reset" class="btn-secondary">Clear Form</button>
+  </form>
+
+  <aside>
+    <h3>Instructions</h3>
+    <p>1. Fill in your information and choose your desired model.</p>
+    <p>2. Select your preferred date and time, then confirm.</p>
+    <p>3. Our staff will contact you to confirm your appointment.</p>
+    <img src="https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=80/01d42513dfd01ef57abada23022249030d6c90e5/photos/application/s-ZAV863l/edit/8R7Sq.jpg?t=175311492839" alt="Car" />
+  </aside>
+</div>
+
+<div class="container" style="grid-template-columns: 1fr;">
+  <table id="bookingTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Type</th>
+        <th>Model</th>
+        <th>Date & Time</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h4>Booking Successful!</h4>
+    <p>We will contact you shortly to confirm your appointment.</p>
+    <button onclick="closePopup()" class="btn-primary" style="margin-top:10px;">Close</button>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('bookingForm');
+  const tableBody = document.querySelector('#bookingTable tbody');
+  const popup = document.getElementById('popup');
+  let bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+
+  function renderTable() {
+    tableBody.innerHTML = '';
+    bookings.forEach(b => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${b.id}</td>
+        <td>${b.fullName}</td>
+        <td>${b.phone}</td>
+        <td>${b.vehicleType}</td>
+        <td>${b.model}</td>
+        <td>${b.date} ${b.time}</td>
+        <td><button class="btn-danger" onclick="removeBooking('${b.id}')">Delete</button></td>
+      `;
+      tableBody.appendChild(tr);
+    });
+  }
+
+  function removeBooking(id) {
+    bookings = bookings.filter(b => b.id !== id);
+    localStorage.setItem('bookings', JSON.stringify(bookings));
+    renderTable();
+  }
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
+    if (!data.agree) {
+      alert('You must agree to the terms.');
+      return;
+    }
+    const booking = { id: 'BK' + Date.now(), ...data };
+    bookings.unshift(booking);
+    localStorage.setItem('bookings', JSON.stringify(bookings));
+    renderTable();
+    form.reset();
+    openPopup();
+  });
+
+  function openPopup() {
+    popup.style.display = 'flex';
+  }
+  function closePopup() {
+    popup.style.display = 'none';
+  }
+
+  renderTable();
+</script>
+
+</body>
+</html>
